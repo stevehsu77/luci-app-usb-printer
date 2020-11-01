@@ -10,7 +10,7 @@ stop() {
 
 start() {
 	for lps in `/usr/bin/detectlp`; do
-		product=`echo $lps | cut -d , -f 2`
+		product=`echo -e "$lps" | cut -d , -f 2`
 
 		/usr/bin/usb_printer_hotplug "$product" add
 	done
